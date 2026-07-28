@@ -66,6 +66,10 @@ recording is made from Godot)
 
 ## Notes / things to know before posting
 
+- There's also a Discord now: https://discord.gg/dKuBJ2Vfy — mention/pin it alongside
+  the Page (add it to the About text and maybe as the Page's action button) once it's
+  renamed from Discord's default "เซิร์ฟเวอร์ของ Jakkkar" to CROWNLINGS with the same
+  icon used here (`discord_icon_1024.png`).
 - The video used on the site (`assets/video/teaser.mp4`) is a **cinematic lore
   teaser**, not gameplay/screen-capture footage — don't caption it as "gameplay."
 - The Riven Sky and Sleepless gallery art shown here are the **child-stage** sprites
