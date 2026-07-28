@@ -69,8 +69,15 @@
       radial-gradient(circle at 50% 20%, rgba(179,18,28,0.25), transparent 60%);
     pointer-events:none;
   }
+  .portrait{
+    border-radius:50%; overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+    background:radial-gradient(circle, rgba(255,240,210,0.06), transparent 70%);
+    margin:0 auto;
+  }
+  .portrait img{width:170%; height:170%; max-width:none; max-height:none; object-fit:cover; object-position:center; display:block;}
   .hero-art{
-    width:220px; margin:0 auto 8px;
+    width:220px; height:220px; margin:0 auto 8px;
     filter:drop-shadow(0 0 40px rgba(255,220,150,0.25));
   }
   .hero h1{
@@ -134,7 +141,7 @@
     background:var(--bg-soft); border:1px solid var(--line); border-radius:14px;
     padding:26px 20px; text-align:center;
   }
-  .fate-card img{width:150px; margin:0 auto 14px;}
+  .fate-card .portrait{width:150px; height:150px; margin-bottom:14px;}
   .fate-card h3{margin:0 0 8px; font-family:Georgia,serif; letter-spacing:0.04em;}
   .fate-card p{font-size:0.9rem; color:var(--cream-dim); margin:0;}
   .fate-card.bright h3{color:#ffe9a8;}
@@ -152,7 +159,7 @@
     padding:18px; text-align:center; transition:transform .2s, border-color .2s;
   }
   .g-card:hover{transform:translateY(-4px); border-color:rgba(255,59,70,0.4);}
-  .g-card img{width:100px; margin:0 auto 10px;}
+  .g-card .portrait{width:100px; height:100px; margin-bottom:10px;}
   .g-card h4{margin:0 0 6px; font-size:0.95rem; letter-spacing:0.03em; color:var(--blood-glow);}
   .g-card p{margin:0; font-size:0.8rem; color:var(--cream-dim);}
 
@@ -212,7 +219,7 @@
 
 <section class="hero">
   <div class="wrap">
-    <img class="hero-art" src="assets/img/bright_adult.png" alt="Pomlet, the bright form of a crownling">
+    <div class="hero-art portrait"><img src="assets/img/bright_adult.png" alt="Pomlet, the bright form of a crownling"></div>
     <h1>CROWN<span class="crown">LING</span>S</h1>
     <p class="tagline">Raise it kind, and it stays kind. Neglect it — or feed it the wrong crown — and it becomes something else entirely.</p>
     <p class="thai">เกมเลี้ยงมอนสเตอร์บนเดสก์ท็อป — เลี้ยงดีได้ร่างสดใส เลี้ยงแบบไหนก็ได้อีกร่างที่ต่างออกไป กำลังพัฒนาลง Steam</p>
@@ -233,13 +240,13 @@
     </div>
     <div class="fates">
       <div class="fate-card bright">
-        <img src="assets/img/bright_adult.png" alt="Bright form">
+        <div class="portrait"><img src="assets/img/bright_adult.png" alt="Bright form"></div>
         <h3>Raised Well</h3>
         <p>Bright, warm, and loyal — the gentle path.</p>
       </div>
       <div class="vs">VS</div>
       <div class="fate-card dark">
-        <img src="assets/img/sleep_adult.png" alt="Corrupted form, the Sleepless">
+        <div class="portrait"><img src="assets/img/sleep_child.png" alt="Corrupted form, the Sleepless"></div>
         <h3>Left Unchecked</h3>
         <p>Neglect or a stolen crown awakens the corrupted side — "the Sleepless."</p>
       </div>
@@ -255,11 +262,11 @@
       <p>Every element twists differently once a crown takes hold.</p>
     </div>
     <div class="gallery">
-      <div class="g-card"><img src="assets/img/ember_adult.png" loading="lazy" alt="Ember corruption"><h4>Ember</h4><p>Fire &amp; ruin</p></div>
-      <div class="g-card"><img src="assets/img/still_adult.png" loading="lazy" alt="Still corruption"><h4>Still</h4><p>Frost &amp; silence</p></div>
-      <div class="g-card"><img src="assets/img/riven_adult.png" loading="lazy" alt="Riven Sky corruption"><h4>Riven Sky</h4><p>Storm &amp; lightning</p></div>
-      <div class="g-card"><img src="assets/img/gorge_adult.png" loading="lazy" alt="Gorge corruption"><h4>Gorge</h4><p>Chaos &amp; hunger</p></div>
-      <div class="g-card"><img src="assets/img/sleep_adult.png" loading="lazy" alt="The Sleepless corruption"><h4>The Sleepless</h4><p>Blood &amp; the void</p></div>
+      <div class="g-card"><div class="portrait"><img src="assets/img/ember_adult.png" loading="lazy" alt="Ember corruption"></div><h4>Ember</h4><p>Fire &amp; ruin</p></div>
+      <div class="g-card"><div class="portrait"><img src="assets/img/still_adult.png" loading="lazy" alt="Still corruption"></div><h4>Still</h4><p>Frost &amp; silence</p></div>
+      <div class="g-card"><div class="portrait"><img src="assets/img/riven_child.png" loading="lazy" alt="Riven Sky corruption"></div><h4>Riven Sky</h4><p>Storm &amp; lightning</p></div>
+      <div class="g-card"><div class="portrait"><img src="assets/img/gorge_adult.png" loading="lazy" alt="Gorge corruption"></div><h4>Gorge</h4><p>Chaos &amp; hunger</p></div>
+      <div class="g-card"><div class="portrait"><img src="assets/img/sleep_child.png" loading="lazy" alt="The Sleepless corruption"></div><h4>The Sleepless</h4><p>Blood &amp; the void</p></div>
     </div>
   </div>
 </section>
@@ -267,14 +274,14 @@
 <section id="teaser">
   <div class="wrap teaser-wrap">
     <div class="section-head">
-      <span class="eyebrow">Real Footage</span>
-      <h2>It lives on your actual desktop</h2>
-      <p>Not a mockup — this is the creature running on the taskbar right now.</p>
+      <span class="eyebrow">First Look</span>
+      <h2>Something ancient is waking up</h2>
+      <p>A cinematic teaser from the world CROWNLINGS is set in.</p>
     </div>
     <video class="teaser-video" autoplay muted loop playsinline>
       <source src="assets/video/teaser.mp4" type="video/mp4">
     </video>
-    <p class="caption">Early build footage — art and effects are still evolving.</p>
+    <p class="caption">Concept teaser — in-game desktop footage is coming in a future update.</p>
   </div>
 </section>
 
