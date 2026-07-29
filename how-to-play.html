@@ -75,26 +75,25 @@
   }
   .section-head p{color:var(--cream-dim); margin:0;}
 
-  /* ---- character gallery (front/back turnarounds) ---- */
-  .turn-grid{
-    display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-    gap:22px; max-width:1000px; margin:0 auto;
+  /* ---- character gallery ---- */
+  .hero-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:26px; max-width:1000px; margin:0 auto;
   }
-  .turn-card{
-    background:var(--bg-soft); border:1px solid var(--line); border-radius:14px;
-    padding:20px; text-align:center;
+  .hero-g-card{
+    background:var(--bg-soft); border:1px solid var(--line); border-radius:16px;
+    padding:26px 20px; text-align:center; transition:transform .2s, border-color .2s;
   }
-  .turn-card.dark{border-color:rgba(255,59,70,0.25);}
-  .turn-card h3{margin:0 0 4px; font-family:Georgia,serif; letter-spacing:0.03em; color:var(--blood-glow);}
-  .turn-card .flavor{margin:0 0 14px; font-size:0.82rem; color:var(--cream-dim);}
-  .turn-pair{display:flex; gap:10px; justify-content:center;}
-  .turn-pair figure{margin:0; flex:1; max-width:150px;}
-  .turn-pair img{
-    width:100%; aspect-ratio:1/1; object-fit:contain;
-    background:radial-gradient(circle, rgba(255,240,210,0.05), transparent 70%);
-    border-radius:10px;
+  .hero-g-card:hover{transform:translateY(-4px); border-color:rgba(255,59,70,0.4);}
+  .hero-g-card.dark{border-color:rgba(255,59,70,0.2);}
+  .hero-g-card .portrait{
+    width:190px; height:190px; margin:0 auto 16px; border-radius:50%; overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+    background:radial-gradient(circle, rgba(255,240,210,0.07), transparent 70%);
   }
-  .turn-pair figcaption{font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--cream-dim); opacity:0.7; margin-top:6px;}
+  .hero-g-card .portrait img{width:190%; height:190%; max-width:none; object-fit:cover; object-position:center 40%;}
+  .hero-g-card h3{margin:0 0 4px; font-family:Georgia,serif; letter-spacing:0.03em; color:var(--blood-glow);}
+  .hero-g-card .flavor{margin:0; font-size:0.85rem; color:var(--cream-dim);}
 
   /* ---- expanded loop ---- */
   .loop-detail{max-width:820px; margin:0 auto; display:flex; flex-direction:column; gap:16px;}
@@ -177,54 +176,36 @@
       <h2>One bright form. Five ways to fall.</h2>
       <p>Every crownling carries a dormant crown. Raise it well and it stays bright — neglect it, or let the wrong crown near it, and it awakens one of five corrupted forms instead.</p>
     </div>
-    <div class="turn-grid">
-      <div class="turn-card">
+    <div class="hero-grid">
+      <div class="hero-g-card">
+        <div class="portrait"><img src="assets/img/bright_adult.png" loading="lazy" alt="Bright crownling"></div>
         <h3>Bright</h3>
         <p class="flavor">Raised well — the gentle, loyal path</p>
-        <div class="turn-pair">
-          <figure><img src="assets/img/turnaround/bright_front.png" loading="lazy" alt="Bright crownling, front view"><figcaption>Front</figcaption></figure>
-          <figure><img src="assets/img/turnaround/bright_back.png" loading="lazy" alt="Bright crownling, back view"><figcaption>Back</figcaption></figure>
-        </div>
       </div>
-      <div class="turn-card dark">
+      <div class="hero-g-card dark">
+        <div class="portrait"><img src="assets/img/ember_adult.png" loading="lazy" alt="Ember corruption"></div>
         <h3>Ember</h3>
         <p class="flavor">Fire &amp; ruin</p>
-        <div class="turn-pair">
-          <figure><img src="assets/img/turnaround/ember_front.png" loading="lazy" alt="Ember corruption, front view"><figcaption>Front</figcaption></figure>
-          <figure><img src="assets/img/turnaround/ember_back.png" loading="lazy" alt="Ember corruption, back view"><figcaption>Back</figcaption></figure>
-        </div>
       </div>
-      <div class="turn-card dark">
+      <div class="hero-g-card dark">
+        <div class="portrait"><img src="assets/img/still_adult.png" loading="lazy" alt="Still corruption"></div>
         <h3>Still</h3>
         <p class="flavor">Frost &amp; silence</p>
-        <div class="turn-pair">
-          <figure><img src="assets/img/turnaround/still_front.png" loading="lazy" alt="Still corruption, front view"><figcaption>Front</figcaption></figure>
-          <figure><img src="assets/img/turnaround/still_back.png" loading="lazy" alt="Still corruption, back view"><figcaption>Back</figcaption></figure>
-        </div>
       </div>
-      <div class="turn-card dark">
+      <div class="hero-g-card dark">
+        <div class="portrait"><img src="assets/img/riven_child.png" loading="lazy" alt="Riven Sky corruption"></div>
         <h3>Riven Sky</h3>
         <p class="flavor">Storm &amp; lightning</p>
-        <div class="turn-pair">
-          <figure><img src="assets/img/turnaround/riven_front.png" loading="lazy" alt="Riven Sky corruption, front view"><figcaption>Front</figcaption></figure>
-          <figure><img src="assets/img/turnaround/riven_back.png" loading="lazy" alt="Riven Sky corruption, back view"><figcaption>Back</figcaption></figure>
-        </div>
       </div>
-      <div class="turn-card dark">
+      <div class="hero-g-card dark">
+        <div class="portrait"><img src="assets/img/gorge_adult.png" loading="lazy" alt="Gorge corruption"></div>
         <h3>Gorge</h3>
         <p class="flavor">Chaos &amp; hunger</p>
-        <div class="turn-pair">
-          <figure><img src="assets/img/turnaround/gorge_front.png" loading="lazy" alt="Gorge corruption, front view"><figcaption>Front</figcaption></figure>
-          <figure><img src="assets/img/turnaround/gorge_back.png" loading="lazy" alt="Gorge corruption, back view"><figcaption>Back</figcaption></figure>
-        </div>
       </div>
-      <div class="turn-card dark">
+      <div class="hero-g-card dark">
+        <div class="portrait"><img src="assets/img/sleep_child.png" loading="lazy" alt="The Sleepless corruption"></div>
         <h3>The Sleepless</h3>
         <p class="flavor">Blood &amp; the void</p>
-        <div class="turn-pair">
-          <figure><img src="assets/img/turnaround/sleep_front.png" loading="lazy" alt="The Sleepless corruption, front view"><figcaption>Front</figcaption></figure>
-          <figure><img src="assets/img/turnaround/sleep_back.png" loading="lazy" alt="The Sleepless corruption, back view"><figcaption>Back</figcaption></figure>
-        </div>
       </div>
     </div>
   </div>
