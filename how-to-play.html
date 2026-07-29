@@ -5,11 +5,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CROWNLINGS — How It Plays</title>
-<meta name="description" content="Meet all six crownling forms and see how CROWNLINGS plays — raising, whack-training, bright/dark alignment, real-folder foraging, bloodline breeding, and async PvP.">
+<meta name="description" content="Meet all six crownling forms from baby to teen to adult, and see how CROWNLINGS plays — raising, growth stages, whack-training, bright/dark alignment, real-folder foraging, bloodline breeding, and async PvP.">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="CROWNLINGS — How It Plays">
-<meta property="og:description" content="Meet all six crownling forms and see how CROWNLINGS plays.">
+<meta property="og:description" content="Meet all six crownling forms at every growth stage and see how CROWNLINGS plays.">
 <meta property="og:image" content="assets/img/bright_adult.png">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -139,6 +139,30 @@
   }
   .btn-secondary:hover{filter:brightness(1.08);}
 
+  /* ---- growth stages ---- */
+  .growth-grid{max-width:900px; margin:0 auto; display:flex; flex-direction:column; gap:16px;}
+  .growth-row{
+    display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+    background:var(--bg-soft); border:1px solid var(--line); border-radius:14px; padding:18px 22px;
+  }
+  .growth-row .g-name{width:90px; flex-shrink:0;}
+  .growth-row .g-name h4{margin:0; font-family:Georgia,serif; color:var(--blood-glow); font-size:1rem;}
+  .growth-row .g-name p{margin:2px 0 0; font-size:0.75rem; color:var(--cream-dim);}
+  .growth-stages{display:flex; align-items:center; gap:10px; flex:1; justify-content:center;}
+  .growth-stages figure{margin:0; text-align:center;}
+  .growth-stages .g-portrait{
+    width:88px; height:88px; border-radius:50%; overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+    background:radial-gradient(circle, rgba(255,240,210,0.06), transparent 70%);
+  }
+  .growth-stages .g-portrait img{width:190%; height:190%; max-width:none; object-fit:cover; object-position:center 40%;}
+  .growth-stages figcaption{font-size:0.65rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--cream-dim); opacity:0.7; margin-top:4px;}
+  .growth-arrow{color:var(--cream-dim); opacity:0.4; font-size:1.1rem; flex-shrink:0;}
+  @media (max-width:640px){
+    .growth-row{justify-content:center;}
+    .growth-row .g-name{width:100%; text-align:center;}
+  }
+
   footer{
     border-top:1px solid var(--line); padding:40px 24px 50px; text-align:center;
     color:var(--cream-dim); font-size:0.85rem;
@@ -156,6 +180,7 @@
     <a class="brand" href="index.html">CROWN<span class="crown">LING</span>S</a>
     <nav class="links">
       <a href="#gallery">Crownlings</a>
+      <a href="#growth">Growth Stages</a>
       <a href="#loop">How It Plays</a>
       <a href="#gimmicks">Gimmicks</a>
       <a href="index.html">Home</a>
@@ -206,6 +231,79 @@
         <div class="portrait"><img src="assets/img/sleep_child.png" loading="lazy" alt="The Sleepless corruption"></div>
         <h3>The Sleepless</h3>
         <p class="flavor">Blood &amp; the void</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="growth">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Every Stage Of Growth</span>
+      <h2>From a fragile hatchling to a fully grown crownling</h2>
+      <p>A crownling doesn't just unlock a finished look — it visibly grows up in real time. A baby crownling starts round, soft-featured, and barely able to show emotion. By the teen stage it's gained real personality, detail, and — on the corrupted paths — its first hints of claws, horns, or cracked skin. Whether you're raising a gentle bright crownling or letting one of the five corruptions take hold, watching it age from baby to teen to adult is half the point of the game.</p>
+      <p class="thai">ลูกครองลิงตัวน้อยจะโตขึ้นจริงตามเวลาที่คุณเล่น — จากไข่ สู่วัยเด็กกลมๆ น่ารัก ไปจนถึงวัยรุ่นที่เริ่มมีบุคลิกและรายละเอียดชัดเจน ก่อนจะโตเต็มวัยในที่สุด</p>
+    </div>
+    <div class="growth-grid">
+      <div class="growth-row">
+        <div class="g-name"><h4>Bright</h4><p>The gentle path</p></div>
+        <div class="growth-stages">
+          <figure><div class="g-portrait"><img src="assets/img/bright_baby.png" loading="lazy" alt="Baby-stage bright crownling"></div><figcaption>Baby</figcaption></figure>
+          <span class="growth-arrow">→</span>
+          <figure><div class="g-portrait"><img src="assets/img/bright_teen.png" loading="lazy" alt="Teen-stage bright crownling"></div><figcaption>Teen</figcaption></figure>
+          <span class="growth-arrow">→</span>
+          <figure><div class="g-portrait"><img src="assets/img/bright_adult.png" loading="lazy" alt="Adult bright crownling"></div><figcaption>Adult</figcaption></figure>
+        </div>
+      </div>
+      <div class="growth-row">
+        <div class="g-name"><h4>Ember</h4><p>Fire &amp; ruin</p></div>
+        <div class="growth-stages">
+          <figure><div class="g-portrait"><img src="assets/img/ember_baby.png" loading="lazy" alt="Baby-stage Ember corruption"></div><figcaption>Baby</figcaption></figure>
+          <span class="growth-arrow">→</span>
+          <figure><div class="g-portrait"><img src="assets/img/ember_teen.png" loading="lazy" alt="Teen-stage Ember corruption"></div><figcaption>Teen</figcaption></figure>
+          <span class="growth-arrow">→</span>
+          <figure><div class="g-portrait"><img src="assets/img/ember_adult.png" loading="lazy" alt="Adult Ember corruption"></div><figcaption>Adult</figcaption></figure>
+        </div>
+      </div>
+      <div class="growth-row">
+        <div class="g-name"><h4>Still</h4><p>Frost &amp; silence</p></div>
+        <div class="growth-stages">
+          <figure><div class="g-portrait"><img src="assets/img/still_baby.png" loading="lazy" alt="Baby-stage Still corruption"></div><figcaption>Baby</figcaption></figure>
+          <span class="growth-arrow">→</span>
+          <figure><div class="g-portrait"><img src="assets/img/still_teen.png" loading="lazy" alt="Teen-stage Still corruption"></div><figcaption>Teen</figcaption></figure>
+          <span class="growth-arrow">→</span>
+          <figure><div class="g-portrait"><img src="assets/img/still_adult.png" loading="lazy" alt="Adult Still corruption"></div><figcaption>Adult</figcaption></figure>
+        </div>
+      </div>
+      <div class="growth-row">
+        <div class="g-name"><h4>Riven Sky</h4><p>Storm &amp; lightning</p></div>
+        <div class="growth-stages">
+          <figure><div class="g-portrait"><img src="assets/img/riven_baby.png" loading="lazy" alt="Baby-stage Riven Sky corruption"></div><figcaption>Baby</figcaption></figure>
+          <span class="growth-arrow">→</span>
+          <figure><div class="g-portrait"><img src="assets/img/riven_teen.png" loading="lazy" alt="Teen-stage Riven Sky corruption"></div><figcaption>Teen</figcaption></figure>
+          <span class="growth-arrow">→</span>
+          <figure><div class="g-portrait"><img src="assets/img/riven_child.png" loading="lazy" alt="Riven Sky corruption"></div><figcaption>Adult</figcaption></figure>
+        </div>
+      </div>
+      <div class="growth-row">
+        <div class="g-name"><h4>Gorge</h4><p>Chaos &amp; hunger</p></div>
+        <div class="growth-stages">
+          <figure><div class="g-portrait"><img src="assets/img/gorge_baby.png" loading="lazy" alt="Baby-stage Gorge corruption"></div><figcaption>Baby</figcaption></figure>
+          <span class="growth-arrow">→</span>
+          <figure><div class="g-portrait"><img src="assets/img/gorge_teen.png" loading="lazy" alt="Teen-stage Gorge corruption"></div><figcaption>Teen</figcaption></figure>
+          <span class="growth-arrow">→</span>
+          <figure><div class="g-portrait"><img src="assets/img/gorge_adult.png" loading="lazy" alt="Adult Gorge corruption"></div><figcaption>Adult</figcaption></figure>
+        </div>
+      </div>
+      <div class="growth-row">
+        <div class="g-name"><h4>The Sleepless</h4><p>Blood &amp; the void</p></div>
+        <div class="growth-stages">
+          <figure><div class="g-portrait"><img src="assets/img/sleep_baby.png" loading="lazy" alt="Baby-stage The Sleepless corruption"></div><figcaption>Baby</figcaption></figure>
+          <span class="growth-arrow">→</span>
+          <figure><div class="g-portrait"><img src="assets/img/sleep_teen.png" loading="lazy" alt="Teen-stage The Sleepless corruption"></div><figcaption>Teen</figcaption></figure>
+          <span class="growth-arrow">→</span>
+          <figure><div class="g-portrait"><img src="assets/img/sleep_child.png" loading="lazy" alt="The Sleepless corruption"></div><figcaption>Adult</figcaption></figure>
+        </div>
       </div>
     </div>
   </div>
