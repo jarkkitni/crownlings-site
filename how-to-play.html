@@ -1,0 +1,329 @@
+<!-- CROWNLINGS — game info / how-to-play page. Same static-HTML approach as index.html, shares its visual language. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CROWNLINGS — How It Plays</title>
+<meta name="description" content="Meet all six crownling forms and see how CROWNLINGS plays — raising, whack-training, bright/dark alignment, real-folder foraging, bloodline breeding, and async PvP.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="CROWNLINGS — How It Plays">
+<meta property="og:description" content="Meet all six crownling forms and see how CROWNLINGS plays.">
+<meta property="og:image" content="assets/img/bright_adult.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:,">
+<style>
+  :root{
+    --bg: #0b0710;
+    --bg-soft: #150e1e;
+    --cream: #f5e6c8;
+    --cream-dim: #cfc2a5;
+    --blood: #b3121c;
+    --blood-glow: #ff3b46;
+    --line: rgba(245,230,200,0.12);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:radial-gradient(ellipse at 50% -10%, #2a1220 0%, var(--bg) 55%) fixed;
+    color:var(--cream);
+    font-family:'Segoe UI', 'Noto Sans Thai', system-ui, -apple-system, sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1100px; margin:0 auto; padding:0 24px;}
+
+  header.nav{
+    position:sticky; top:0; z-index:20;
+    background:rgba(11,7,16,0.85);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  header.nav .wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 24px;}
+  .brand{font-family:Georgia, 'Times New Roman', serif; letter-spacing:0.12em; font-weight:700; font-size:1.15rem; text-decoration:none;}
+  .brand .crown{color:var(--blood-glow);}
+  nav.links a{
+    margin-left:22px; text-decoration:none; font-size:0.85rem; letter-spacing:0.04em;
+    color:var(--cream-dim); text-transform:uppercase;
+  }
+  nav.links a:hover{color:var(--cream);}
+
+  .page-hero{padding:70px 24px 50px; text-align:center;}
+  .page-hero h1{
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:clamp(2rem, 5vw, 3rem);
+    letter-spacing:0.06em;
+    margin:0 0 14px;
+  }
+  .page-hero p{color:var(--cream-dim); max-width:620px; margin:0 auto; font-size:1.05rem;}
+  .page-hero p.thai{font-size:0.9rem; opacity:0.8; margin-top:8px;}
+
+  section{padding:60px 24px;}
+  .section-head{text-align:center; max-width:680px; margin:0 auto 40px;}
+  .section-head .eyebrow{
+    text-transform:uppercase; letter-spacing:0.18em; font-size:0.75rem;
+    color:var(--blood-glow); margin-bottom:10px; display:block;
+  }
+  .section-head h2{
+    font-family:Georgia, 'Times New Roman', serif; font-size:clamp(1.5rem,3.2vw,2.1rem);
+    margin:0 0 12px;
+  }
+  .section-head p{color:var(--cream-dim); margin:0;}
+
+  /* ---- character gallery (front/back turnarounds) ---- */
+  .turn-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:22px; max-width:1000px; margin:0 auto;
+  }
+  .turn-card{
+    background:var(--bg-soft); border:1px solid var(--line); border-radius:14px;
+    padding:20px; text-align:center;
+  }
+  .turn-card.dark{border-color:rgba(255,59,70,0.25);}
+  .turn-card h3{margin:0 0 4px; font-family:Georgia,serif; letter-spacing:0.03em; color:var(--blood-glow);}
+  .turn-card .flavor{margin:0 0 14px; font-size:0.82rem; color:var(--cream-dim);}
+  .turn-pair{display:flex; gap:10px; justify-content:center;}
+  .turn-pair figure{margin:0; flex:1; max-width:150px;}
+  .turn-pair img{
+    width:100%; aspect-ratio:1/1; object-fit:contain;
+    background:radial-gradient(circle, rgba(255,240,210,0.05), transparent 70%);
+    border-radius:10px;
+  }
+  .turn-pair figcaption{font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--cream-dim); opacity:0.7; margin-top:6px;}
+
+  /* ---- expanded loop ---- */
+  .loop-detail{max-width:820px; margin:0 auto; display:flex; flex-direction:column; gap:16px;}
+  .loop-row{
+    display:flex; gap:20px; align-items:flex-start;
+    background:var(--bg-soft); border:1px solid var(--line); border-radius:12px; padding:20px 24px;
+  }
+  .loop-row .num{
+    font-family:Georgia,serif; font-size:1.8rem; color:var(--blood-glow); opacity:0.7; flex-shrink:0;
+    width:44px;
+  }
+  .loop-row h4{margin:0 0 6px; font-size:1.05rem;}
+  .loop-row p{margin:0; font-size:0.9rem; color:var(--cream-dim);}
+
+  /* ---- gimmick cards ---- */
+  .gimmick-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:20px; max-width:1000px; margin:0 auto;
+  }
+  .gimmick-card{
+    background:var(--bg-soft); border:1px solid var(--line); border-radius:14px; padding:24px;
+  }
+  .gimmick-card .icon{font-size:1.6rem; margin-bottom:10px; display:block;}
+  .gimmick-card h4{margin:0 0 8px; font-family:Georgia,serif; letter-spacing:0.02em;}
+  .gimmick-card p{margin:0; font-size:0.88rem; color:var(--cream-dim);}
+
+  .cta-row{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:14px 30px; border-radius:6px;
+    font-weight:600; letter-spacing:0.03em; text-decoration:none; font-size:0.95rem;
+    border:1px solid transparent; cursor:pointer;
+  }
+  .btn-discord{
+    background:linear-gradient(180deg, #6f7bf7, #5865F2);
+    color:#fff;
+    box-shadow:0 6px 20px rgba(88,101,242,0.35);
+  }
+  .btn-discord:hover{filter:brightness(1.08);}
+  .btn-secondary{
+    background:linear-gradient(180deg, var(--blood-glow), var(--blood));
+    color:#fff0ee;
+    box-shadow:0 6px 20px rgba(179,18,28,0.35);
+  }
+  .btn-secondary:hover{filter:brightness(1.08);}
+
+  footer{
+    border-top:1px solid var(--line); padding:40px 24px 50px; text-align:center;
+    color:var(--cream-dim); font-size:0.85rem;
+  }
+  footer .foot-links{margin-bottom:14px;}
+  footer .foot-links a{margin:0 12px; text-decoration:none; color:var(--cream); font-weight:600;}
+  footer .foot-links a:hover{color:var(--blood-glow);}
+  footer .fine{opacity:0.6; font-size:0.75rem; max-width:520px; margin:14px auto 0;}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">CROWN<span class="crown">LING</span>S</a>
+    <nav class="links">
+      <a href="#gallery">Crownlings</a>
+      <a href="#loop">How It Plays</a>
+      <a href="#gimmicks">Gimmicks</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero wrap">
+  <h1>How CROWN<span style="color:var(--blood-glow);">LING</span>S Plays</h1>
+  <p>One creature, six possible destinies, and a handful of systems that make each playthrough feel like your own.</p>
+  <p class="thai">หนึ่งตัวละคร หกชะตากรรม — และระบบเกมที่ทำให้ทุกการเล่นไม่เหมือนกันเลย</p>
+</div>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Meet the Crownlings</span>
+      <h2>One bright form. Five ways to fall.</h2>
+      <p>Every crownling carries a dormant crown. Raise it well and it stays bright — neglect it, or let the wrong crown near it, and it awakens one of five corrupted forms instead.</p>
+    </div>
+    <div class="turn-grid">
+      <div class="turn-card">
+        <h3>Bright</h3>
+        <p class="flavor">Raised well — the gentle, loyal path</p>
+        <div class="turn-pair">
+          <figure><img src="assets/img/turnaround/bright_front.png" loading="lazy" alt="Bright crownling, front view"><figcaption>Front</figcaption></figure>
+          <figure><img src="assets/img/turnaround/bright_back.png" loading="lazy" alt="Bright crownling, back view"><figcaption>Back</figcaption></figure>
+        </div>
+      </div>
+      <div class="turn-card dark">
+        <h3>Ember</h3>
+        <p class="flavor">Fire &amp; ruin</p>
+        <div class="turn-pair">
+          <figure><img src="assets/img/turnaround/ember_front.png" loading="lazy" alt="Ember corruption, front view"><figcaption>Front</figcaption></figure>
+          <figure><img src="assets/img/turnaround/ember_back.png" loading="lazy" alt="Ember corruption, back view"><figcaption>Back</figcaption></figure>
+        </div>
+      </div>
+      <div class="turn-card dark">
+        <h3>Still</h3>
+        <p class="flavor">Frost &amp; silence</p>
+        <div class="turn-pair">
+          <figure><img src="assets/img/turnaround/still_front.png" loading="lazy" alt="Still corruption, front view"><figcaption>Front</figcaption></figure>
+          <figure><img src="assets/img/turnaround/still_back.png" loading="lazy" alt="Still corruption, back view"><figcaption>Back</figcaption></figure>
+        </div>
+      </div>
+      <div class="turn-card dark">
+        <h3>Riven Sky</h3>
+        <p class="flavor">Storm &amp; lightning</p>
+        <div class="turn-pair">
+          <figure><img src="assets/img/turnaround/riven_front.png" loading="lazy" alt="Riven Sky corruption, front view"><figcaption>Front</figcaption></figure>
+          <figure><img src="assets/img/turnaround/riven_back.png" loading="lazy" alt="Riven Sky corruption, back view"><figcaption>Back</figcaption></figure>
+        </div>
+      </div>
+      <div class="turn-card dark">
+        <h3>Gorge</h3>
+        <p class="flavor">Chaos &amp; hunger</p>
+        <div class="turn-pair">
+          <figure><img src="assets/img/turnaround/gorge_front.png" loading="lazy" alt="Gorge corruption, front view"><figcaption>Front</figcaption></figure>
+          <figure><img src="assets/img/turnaround/gorge_back.png" loading="lazy" alt="Gorge corruption, back view"><figcaption>Back</figcaption></figure>
+        </div>
+      </div>
+      <div class="turn-card dark">
+        <h3>The Sleepless</h3>
+        <p class="flavor">Blood &amp; the void</p>
+        <div class="turn-pair">
+          <figure><img src="assets/img/turnaround/sleep_front.png" loading="lazy" alt="The Sleepless corruption, front view"><figcaption>Front</figcaption></figure>
+          <figure><img src="assets/img/turnaround/sleep_back.png" loading="lazy" alt="The Sleepless corruption, back view"><figcaption>Back</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="loop" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The Core Loop</span>
+      <h2>Raise → Evolve → Breed → Battle</h2>
+    </div>
+    <div class="loop-detail">
+      <div class="loop-row">
+        <span class="num">01</span>
+        <div><h4>Raise</h4><p>Your crownling lives on your real desktop, not in a separate app window. It grows the more you actually use your PC — no idle timers, no forced check-ins.</p></div>
+      </div>
+      <div class="loop-row">
+        <span class="num">02</span>
+        <div><h4>Evolve</h4><p>How you treat it decides its shape. Care and attention keep it on the bright path; neglect — or the wrong crown getting too close — pulls it toward one of five corrupted forms.</p></div>
+      </div>
+      <div class="loop-row">
+        <span class="num">03</span>
+        <div><h4>Breed</h4><p>Pair two crownlings and their offspring inherit a random mix of both parents' skills. Rare trait combinations are what make a bloodline worth showing off.</p></div>
+      </div>
+      <div class="loop-row">
+        <span class="num">04</span>
+        <div><h4>Battle</h4><p>Send your bloodline into the arena without needing to be online at the same time as your opponent — queue it up, and let the match resolve on its own.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gimmicks">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What Makes It Different</span>
+      <h2>A few systems you won't see elsewhere</h2>
+    </div>
+    <div class="gimmick-grid">
+      <div class="gimmick-card">
+        <span class="icon">🪄</span>
+        <h4>Whack-to-Train</h4>
+        <p>Grab a training tool and (gently) whack your crownling to sharpen its reflexes. Early on it flinches and stumbles in increasingly ridiculous ways; by max level it's nearly untouchable. Every tool is cosmetic — it reshapes how your crownling defends itself, never how strong it can get.</p>
+      </div>
+      <div class="gimmick-card">
+        <span class="icon">👑</span>
+        <h4>Bright ↔ Dark Alignment</h4>
+        <p>One creature, two destinies. The exact same crownling can grow up bright and loyal, or wake up as something else entirely — same stats foundation, completely different personality and look.</p>
+      </div>
+      <div class="gimmick-card">
+        <span class="icon">📁</span>
+        <h4>Real-Folder Foraging</h4>
+        <p>Your crownling forages your actual PC for resources — safely. It only ever reads file types, counts, and ages, never contents, and it never opens, moves, or deletes anything. A desktop full of photos and music nudges it toward the light; one full of code and system files nudges it toward the dark.</p>
+      </div>
+      <div class="gimmick-card">
+        <span class="icon">🧬</span>
+        <h4>Bloodline Breeding</h4>
+        <p>Skills pass down in a random mix from both parents — not a guaranteed clone. Building a strong bloodline takes real generations, not one lucky roll.</p>
+      </div>
+      <div class="gimmick-card">
+        <span class="icon">⚔️</span>
+        <h4>Async PvP Arena</h4>
+        <p>No need to line up online with an opponent. Snapshot your crownling, send it into the arena, and check back for the result whenever you want.</p>
+      </div>
+      <div class="gimmick-card">
+        <span class="icon">💬</span>
+        <h4>A Companion With an Attitude</h4>
+        <p>Bright crownlings are sweet, encouraging, and genuinely helpful — a quiet nudge to take a break, a little celebration when you win. Dark crownlings are chaotic little gremlins — sassy, stubborn, and always a bit too pleased with themselves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="text-align:center;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Follow Along</span>
+      <h2>CROWNLINGS is still in active development</h2>
+      <p>Wishlist support, art, and every system on this page are still being built and may change before release.</p>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-discord" href="https://discord.gg/dKuBJ2Vfy" target="_blank" rel="noopener">Join the Discord</a>
+      <a class="btn btn-secondary" href="https://www.facebook.com/profile.php?id=61583266993358" target="_blank" rel="noopener">Follow on Facebook</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="index.html" style="display:block; margin-bottom:10px;">CROWN<span class="crown">LING</span>S</a>
+    <div class="foot-links">
+      <a href="index.html">Home</a>
+      <a href="https://discord.gg/dKuBJ2Vfy" target="_blank" rel="noopener">Discord</a>
+      <a href="https://www.facebook.com/profile.php?id=61583266993358" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <p class="fine">CROWNLINGS is in active development. Art, systems, and names on this page are work in progress and may change before release.</p>
+    <p class="fine">&copy; 2026 CROWNLINGS. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
