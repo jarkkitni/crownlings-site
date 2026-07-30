@@ -7,12 +7,20 @@
 <title>CROWNLINGS — Raise it kind, or raise it wrong</title>
 <meta name="description" content="CROWNLINGS is a desktop creature-raising game. Raise a crownling over real time, evolve it down a bright or corrupted path, breed bloodlines, and battle in async PvP. Coming to Steam.">
 
-<!-- Open Graph / social preview — learned the hard way on a past project that skipping this makes shared links show up as an empty box -->
+<!-- Open Graph / social preview — learned the hard way on a past project that skipping this makes shared links show up as an empty box.
+     🔴 og:image and og:url MUST BE ABSOLUTE URLs. These were relative ("assets/img/...") from launch until 30 Jul 2026, which
+     produces the exact empty box this block exists to prevent: the scrapers at Facebook, Discord and LINE fetch the tag value on
+     their own servers with no page context to resolve it against, so a relative path is simply unfetchable. It fails silently —
+     the page looks perfect to a human and every shared link previews blank. If this site ever moves to a custom domain, these two
+     absolute URLs are the thing to update. -->
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="CROWNLINGS">
+<meta property="og:url" content="https://jarkkitni.github.io/crownlings-site/">
 <meta property="og:title" content="CROWNLINGS — Raise it kind, or raise it wrong">
 <meta property="og:description" content="A desktop creature-raising game where neglect isn't game over — it's a different ending. Coming to Steam.">
-<meta property="og:image" content="assets/img/bright_adult.png">
+<meta property="og:image" content="https://jarkkitni.github.io/crownlings-site/assets/img/bright_adult.png">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jarkkitni.github.io/crownlings-site/assets/img/bright_adult.png">
 
 <link rel="icon" href="data:,">
 <style>
